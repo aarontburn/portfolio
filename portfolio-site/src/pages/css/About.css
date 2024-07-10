@@ -4,21 +4,21 @@
 }
 
 #about-body {
-    margin-top: 2em;
-    background-color: var(--color-2);
+    margin-top: 5em;
+    background-color: var(--color-1);
     height: 100%;
-    width: 50em;
-    border: 1px solid var(--color-2);
+    width: 55em;
+    border: 1px solid var(--color-1);
     border-radius: 10px;
 }
 
 #projects-button {
     font-size: 1.25em;
-    border: 1px solid var(--color-2);
+    border: 1px solid var(--color-1);
     width: fit-content;
 }
 
 
 #projects-button:hover {
-    background-color: var(--color-3);
+    background-color: var(--color-2);
 }

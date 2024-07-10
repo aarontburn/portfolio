@@ -1,0 +1,33 @@
+#projects-page {
+    display: flex;
+    justify-content: center;
+}
+
+#projects-body {
+    margin-top: 10em;
+    height: 55em;
+    width: 75vw;
+    border: 1px solid var(--color-1);
+    border-radius: 10px;
+    text-align: center;
+}
+
+
+#project-container {
+    border: 1px solid red;
+    margin: 2em;
+    padding: 5em;
+    height: 46em;
+}
+
+
+.project {
+    border: 1px solid rgb(0, 0, 0);
+    width: 20em;
+    height: 100%;
+    padding: 0.5em
+}
+
+.project .details-link {
+    margin-top: auto;
+}

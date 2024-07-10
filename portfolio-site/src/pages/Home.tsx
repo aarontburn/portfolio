@@ -1,24 +1,33 @@
+import { NavButton, openLink } from '../components/Components';
+import linkedInLogo from '../res/linkedin.png';
+import gitHubLogo from '../res/github.png';
 import './css/Home.css'
 
-import { NavButton } from "../components/NavButton";
-import { Transition } from "../components/Transitions";
+const FONT_SIZE_1: string = '3em';
+const FONT_SIZE_2: string = '2.5em';
 
-export function Home({ callback }: { callback: (v: any) => void }) {
+
+export function Home({ changePage }: { changePage: (path: string) => void }) {
 
     return (
-        <Transition>
+        <>
             <div className="page" id="homepage">
                 <h1 style={{ fontSize: '7em' }}>Aaron Burnham</h1>
                 <h2>Aspiring Software Developer</h2>
 
-                <div id="home-nav">
-                    <NavButton displayText={"About"} callback={() => callback('/about')} fontSize={'3em'} />
-                    <NavButton displayText={"Projects"} callback={() => callback('/projects')} fontSize={'3em'} />
-                    <NavButton displayText={"Contact"} callback={() => callback('/contact')} fontSize={'3em'} />
+                <div className="home-nav">
+                    <NavButton displayText={"About"} callback={() => changePage('/about')} fontSize={FONT_SIZE_1} width='4em'/>
+                    <NavButton displayText={"Projects"} callback={() => changePage('/projects')} fontSize={FONT_SIZE_1} width='4em'/>
+                    <NavButton displayText={"Contact"} callback={() => changePage('/contact')} fontSize={FONT_SIZE_1} width='4em'/>
+                </div>
+
+                <div className="home-nav">
+                    <NavButton displayText={"LinkedIn"} image={linkedInLogo} callback={() => openLink('LinkedIn')} fontSize={FONT_SIZE_2} width='15em'/>
+                    <NavButton displayText={"GitHub"} image={gitHubLogo} callback={() => openLink('GitHub')} fontSize={FONT_SIZE_2} width='15em' />
                 </div>
 
             </div>
-        </ Transition>
+        </>
 
 
     );
