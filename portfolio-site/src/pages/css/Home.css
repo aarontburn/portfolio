@@ -1,0 +1,12 @@
+#homepage {
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+#home-nav {
+	display: flex;
+	margin-top: 4em;
+}
