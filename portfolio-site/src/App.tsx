@@ -8,10 +8,11 @@ import { useEffect, useState } from 'react';
 import { Header } from './components/Header';
 import { AnimatePresence } from 'framer-motion';
 import { Transition } from './components/Transitions';
+import { ProjectDetailsPage } from './pages/ProjectDetailsPage';
 
 
 export default function App() {
-	const [selectedTab, setSelectedTab] = useState('/');
+	const [_, setSelectedTab] = useState('/');
 	const location = useLocation();
 	const [isHomePage, setIsHomePage] = useState(location.pathname === "/");
 	const nav = useNavigate();
@@ -41,7 +42,8 @@ export default function App() {
 				<Routes location={location} key={location.pathname}>
 					<Route path="/" element={<Transition><Home changePage={changePage} /></Transition>} />
 					<Route path="/about" element={<Transition><About changePage={changePage} /></Transition>} />
-					<Route path="/projects" element={<Transition><Projects /></Transition>} />
+					<Route path="/projects" element={<Transition><Projects changePage={changePage} /></Transition>} />
+					<Route path="/projects/:id" element={<Transition><ProjectDetailsPage /></Transition>} />
 					<Route path="/contact" element={<Transition><Contact /></Transition>} />
 				</Routes>
 			</ AnimatePresence>

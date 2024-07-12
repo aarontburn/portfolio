@@ -13,11 +13,27 @@ export function NavButton({ displayText, callback, fontSize, image, width }: { d
     </div>
 }
 
+
+export function List(props: any) {
+    return <>
+        <li>{props.text}</li>
+        <div style={{ marginLeft: '1.5em', marginBottom: '0.5em' }}>
+            {props.children}
+        </div>
+    </>
+}
+
+
+
 const LINKEDIN_URL: string = 'https://www.linkedin.com/in/aaronburnham/';
 const GITHUB_URL: string = 'https://github.com/aarontburn';
 
 
-export function openLink(url: string | 'LinkedIn' | 'GitHub') {
+export function openLink(url: string | 'LinkedIn' | 'GitHub' | undefined) {
+    if (url === undefined) {
+        return;
+    }
+
     let newWindow;
     if (url === "LinkedIn") {
         newWindow = window.open(LINKEDIN_URL, '_blank', 'noopener,noreferrer')

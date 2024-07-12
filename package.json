@@ -1,4 +1,9 @@
 {
+  "scripts": {
+    "start": "cd portfolio-site && npm start"
+  },
+
+
   "devDependencies": {
     "react-router-dom": "^6.24.1"
   }

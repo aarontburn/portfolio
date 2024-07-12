@@ -20,7 +20,6 @@ export function Header({ callback }: { callback: (v: any) => void }) {
             <div className='header-group external'>
                 <NavButton displayText={"LinkedIn"} image={linkedInLogo} callback={() => openLink("LinkedIn")} fontSize={FONT_SIZE} />
                 <NavButton displayText={"GitHub"} image={githubLogo} callback={() => openLink("GitHub")} fontSize={FONT_SIZE} />
-
             </div>
 
 

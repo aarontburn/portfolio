@@ -1,0 +1,31 @@
+#project-details-page {
+    display: flex;
+    justify-content: center;
+}
+
+#project-details-body {
+    margin-top: 6em;
+    width: 90vw;
+    /* border: 1px solid black; */
+    border-radius: 10px;
+    text-align: center;
+    display: flex;
+}
+
+
+#left {
+    width: 30%;
+    margin: 1em;
+}
+
+.features-list {
+    list-style-position: inside;
+    list-style-type: '→ ';
+}
+
+
+#right {
+    width: 68%;
+    text-align: left;
+    margin: 1em;
+}
