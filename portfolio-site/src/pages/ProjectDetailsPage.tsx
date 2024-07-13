@@ -16,9 +16,11 @@ export function ProjectDetailsPage(props: any) {
         <div id="project-details-body">
             <div id="left">
 
-                <img src={project.image} style={{ width: '100%' }} />
+                <img src={project.image} style={{ width: '100%' }} alt="Project Sample" />
                 <h1 style={{ fontSize: '50px' }}>{project.name}</h1>
-                <p onClick={() => openLink(project.repoLink)} style={{ color: 'blue', cursor: 'pointer' }}>
+                <p
+                    onClick={() => openLink(project.repoLink)}
+                    style={{ color: 'blue', cursor: 'pointer' }}>
                     {project.repoLink || ''}
                 </p>
 
@@ -28,19 +30,19 @@ export function ProjectDetailsPage(props: any) {
                 <BoldSectionHeader>Technology Stack</BoldSectionHeader>
                 <br />
 
-
                 <TechnologySection name="Languages: " items={stack.languages} />
                 <TechnologySection name="Frameworks/Libraries: " items={stack.frameworksOrLibraries} />
                 <TechnologySection name="Technologies: " items={stack.technologies} />
                 <TechnologySection name="Others: " items={stack.others} />
             </div>
 
+
+
             <div id="right">
                 <BoldSectionHeader>Summary:</BoldSectionHeader>
                 <br />
                 <h3>{project.longDesc ?? project.desc}</h3>
                 <br />
-
                 <BoldSectionHeader>Features:</BoldSectionHeader>
                 <br />
                 <h3>{project.features ?? ''}</h3>

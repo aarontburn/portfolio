@@ -23,6 +23,12 @@ export function List(props: any) {
     </>
 }
 
+export function Bold(props: any) {
+    return <div style={{ fontWeight: 550 }}>
+        {props.children}
+    </div>
+}
+
 
 
 const LINKEDIN_URL: string = 'https://www.linkedin.com/in/aaronburnham/';
