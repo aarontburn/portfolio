@@ -58,16 +58,16 @@ const projects: ProjectDetails[] = [
             <p>
                 The <Italic>Volume Controller</Italic> module is a functional example of what
                 you can make using this API. It uses two external packages found on
-                the <Italic>NPM</Italic> repository: the <span 
-                    style={{fontStyle: 'italic', cursor: 'pointer', color: 'blue'}}
+                the <Italic>NPM</Italic> repository: the <span
+                    style={{ fontStyle: 'italic', cursor: 'pointer', color: 'blue' }}
                     onClick={() => openLink('https://www.npmjs.com/package/native-sound-mixer')}>
-                    native-sound-mixer 
-                </span> and <span 
-                    style={{fontStyle: 'italic', cursor: 'pointer', color: 'blue'}}
+                    native-sound-mixer
+                </span> and <span
+                    style={{ fontStyle: 'italic', cursor: 'pointer', color: 'blue' }}
                     onClick={() => openLink('https://www.npmjs.com/package/node-window-manager')}>
                     node-window-manager
                 </span>
-                . This <Italic>module</Italic> works similar to the Windows Sound Mixer, where 
+                . This <Italic>module</Italic> works similar to the Windows Sound Mixer, where
                 you can control the volume of all sound-producing processes, as well as the
                 master volume.
             </p>
@@ -111,7 +111,6 @@ const projects: ProjectDetails[] = [
                 </List>
 
 
-
             </ul>
         </>
 
@@ -124,17 +123,48 @@ const projects: ProjectDetails[] = [
         stack: {
             languages: ["JavaScript", "SQL", "PHP", "HTML", "CSS"],
             technologies: ["Google Cloud Platform (GCP)", "Google Firebase", "MySQL"]
-        }
+        },
+        features: <ul className='features-list'>
+            <List text="Displays various study locations around the University of Washington Tacoma campus, including:">
+                <li>Location (address, building, room)</li>
+                <li>Operating hours</li>
+                <li>Space owner</li>
+                <li>Space amenities (whiteboard, microwave, etc.)</li>
+                <li>Image</li>
+            </List>
+            <li>Filtering specific spaces to fit a criteria.</li>
+            <List text={<Bold>User Profiles</Bold>}>
+                <li>Registered users can bookmark spaces and view them in a dedicated page.</li>
+                <li>Registered users can leave comments and score a location by noise level,
+                    availability, and busyness for other users to see.</li>
+            </List>
+
+        </ ul>
     },
     {
         id: 'fantasywordprediction',
         name: "Fantasy Language Word Prediction",
-        desc: "<desc>",
+        desc: "Perform word prediction in Star Treks Vulcan language.",
         image: placeholderImage,
         stack: {
             languages: ["Python"],
-            frameworksOrLibraries: ["NLTK", "Tkinter"]
-        }
+            frameworksOrLibraries: ["NLTK", "Tkinter"],
+            others: ["Natural Language Processing (NLP)"]
+        },
+        longDesc: <>
+            <p>
+                This project explored Natural Language Processing (NLP), which resulted in
+                an application that allows the user to do word prediction in 
+                <Italic>Star Treks</Italic> <Bold>Vulcan</Bold> language.
+            </p>
+
+            <h3 style={{ marginTop: '1em' }}><Bold>Model Summary</Bold></h3>
+            <p>
+                Using a dataset of ~1.5 milion words, we trained both a bigram statistical model
+                and a trigram statistical model.
+
+            </p>
+        </>
     },
 
     {
