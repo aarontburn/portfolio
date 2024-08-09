@@ -23,7 +23,11 @@ export interface TechnologyStack {
 
 const Bold = (props: any) => <span style={{ fontWeight: 550 }}>{props.children}</span>;
 const Italic = (props: any) => <span style={{ fontStyle: "italic" }}>{props.children}</span>
-
+const Link = (props: any) => <span
+    style={{ color: 'blue', cursor: 'pointer', fontStyle: 'italic' }}
+    onClick={() => openLink(props.link)}>
+    {props.children}
+</span>
 
 const projects: ProjectDetails[] = [
     {
@@ -48,25 +52,17 @@ const projects: ProjectDetails[] = [
             </p>
 
             <h3 style={{ marginTop: '1em' }}><Bold>Example:</Bold> Volume Controller</h3>
-            <p
-                onClick={() => openLink('https://github.com/aarontburn/modules-volume_controller')}
-                style={{ color: 'blue', cursor: "pointer" }}
-            >
-                https://github.com/aarontburn/modules-volume_controller
+            <p>
+                <Link link='https://github.com/aarontburn/modules-volume_controller'>https://github.com/aarontburn/modules-volume_controller</Link>
             </p>
             <br />
             <p>
                 The <Italic>Volume Controller</Italic> module is a functional example of what
                 you can make using this API. It uses two external packages found on
-                the <Italic>NPM</Italic> repository: the <span
-                    style={{ fontStyle: 'italic', cursor: 'pointer', color: 'blue' }}
-                    onClick={() => openLink('https://www.npmjs.com/package/native-sound-mixer')}>
-                    native-sound-mixer
-                </span> and <span
-                    style={{ fontStyle: 'italic', cursor: 'pointer', color: 'blue' }}
-                    onClick={() => openLink('https://www.npmjs.com/package/node-window-manager')}>
-                    node-window-manager
-                </span>
+                the <Italic>NPM</Italic> repository:
+                the <Link link='https://www.npmjs.com/package/native-sound-mixer'>native-sound-mixer
+                </Link> and <Link link='https://www.npmjs.com/package/node-window-manager'>node-window-manager</Link>
+
                 . This <Italic>module</Italic> works similar to the Windows Sound Mixer, where
                 you can control the volume of all sound-producing processes, as well as the
                 master volume.
@@ -80,10 +76,10 @@ const projects: ProjectDetails[] = [
                     <List text='Streamlined developer API'>
                         <li>Includes scripts and tools to export modules.</li>
                         <List text={<>Includes boilerplate repository.</>}>
-                            <p
-                                style={{ color: 'blue', cursor: 'pointer' }}
-                                onClick={() => openLink('https://github.com/aarontburn/modules-module-quickstart')}>
-                                https://github.com/aarontburn/modules-module-quickstart
+                            <p>
+                                <Link link='https://github.com/aarontburn/modules-module-quickstart'>
+                                    https://github.com/aarontburn/modules-module-quickstart
+                                </Link>
                             </p>
                         </List>
                         <List text='Inter-Module Communication (IMC)'>
@@ -94,7 +90,7 @@ const projects: ProjectDetails[] = [
                         <List text='Simplified setting management'>
                             <li>Streamlined state management and storage.   </li>
                         </List>
-                        <li>Extensive documentation (inline, JSDoc, Markdown) for developer-relevent files, classes/objects, and functions.</li>
+                        <li>Extensive documentation (inline, JSDoc, Markdown) for developer-relevant files, classes/objects, and functions.</li>
                     </List>
 
                     <List text='Zero developer restrictions'>
@@ -154,17 +150,43 @@ const projects: ProjectDetails[] = [
         longDesc: <>
             <p>
                 This project explored Natural Language Processing (NLP), which resulted in
-                an application that allows the user to do word prediction in 
-                <Italic>Star Treks</Italic> <Bold>Vulcan</Bold> language.
+                an application that allows the user to do word prediction
+                in <Italic>Star Trek's</Italic> <Bold>Vulcan</Bold> language.
             </p>
 
             <h3 style={{ marginTop: '1em' }}><Bold>Model Summary</Bold></h3>
             <p>
-                Using a dataset of ~1.5 milion words, we trained both a bigram statistical model
+                Using a dataset of ~1.5 million words, we trained both a bigram statistical model
                 and a trigram statistical model.
-
             </p>
-        </>
+            
+            <h3 style={{ marginTop: '1em' }}><Bold>Limitations</Bold></h3>
+            <p>
+                One of the limitations we faced was acquiring a dataset. There wasn't enough pre-translated
+                Vulcan text, so we used an <Link link='https://funtranslations.com/vulcan'>English-to-Vulcan</Link> translator.
+                While this seemed to work, we couldn't guarantee that this issue was accurate for complex
+                words and grammatical structures due to a lack of Vulcan-to-English translators.
+            </p>
+
+        </>,
+        features: <ul className='features-list'>
+            <List text='Clean dataset'>
+                <li>
+                    Implemented a custom dataset cleaner to strip away illegal characters and replace character
+                    variants with their standardized version (<Italic>e.g.</Italic> “ (U+201C) → ” (U+0022))
+                </li>
+            </List>
+            <List text="Custom word parser">
+                <li>
+                    The training process uses a non-standard word tokenizer to accommodate
+                    Vulcan's unique punctuation.
+                </li>
+            </List>
+            <li>Upon typing a word in, predicts and provides the three most-common subsequent words.</li>
+
+
+
+        </ul>
     },
 
     {
